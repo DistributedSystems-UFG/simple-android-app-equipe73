@@ -20,8 +20,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
         EditText editText2 = (EditText) findViewById(R.id.editTextTextPersonName2);
+        EditText n1 = (EditText) findViewById(R.id.num1);
+        EditText n2 = (EditText) findViewById(R.id.num2);
+        int a = Integer.parseInt( n1.getText().toString());
+        int b = Integer.parseInt( n2.getText().toString());
+        a += b;
         String message = editText1.getText().toString() + " " + editText2.getText().toString();
+        String sum = Integer.toString(a);
         intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra("sum",sum);
         startActivity(intent);
     }
 }
